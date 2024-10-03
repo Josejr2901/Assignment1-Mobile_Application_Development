@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtMortgagePrincipalAmount"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:gravity="left|center"
+        android:text="Mortgage Principal Amount"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/txtInterestRate"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:gravity="left|center"
+        android:text="Interest Rate"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtInputEnterAmount" />
+
+    <TextView
+        android:id="@+id/txtAmortizationPeriod"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:gravity="left|center"
+        android:text="Amortization Period "
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarInterestRate" />
+
+    <TextView
+        android:id="@+id/txtAmortizationPeriod2"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:gravity="left|center"
+        android:text="Year(s)"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerTotalYears"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.348"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spinnerTotalYears"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txtPaymentFrequency"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:gravity="left|center"
+        android:text="Payment Frequency"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerTotalYears" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#12422B"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtToolBarTitle"
+        android:layout_width="310dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="Mortgage Payment Calculator"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.53" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtInputEnterAmount"
+        android:layout_width="460dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:hint="$ Enter Amount"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtMortgagePrincipalAmount"
+        app:layout_constraintTop_toBottomOf="@+id/txtMortgagePrincipalAmount" />
+
+    <TextView
+        android:id="@+id/percentageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0%"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBarInterestRate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.196"
+        app:layout_constraintStart_toEndOf="@+id/seekBarInterestRate"
+        app:layout_constraintTop_toTopOf="@+id/seekBarInterestRate"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <SeekBar
+        android:id="@+id/seekBarInterestRate"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:max="30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtInterestRate"
+        app:layout_constraintTop_toBottomOf="@+id/txtInterestRate" />
+
+    <Spinner
+        android:id="@+id/spinnerTotalYears"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtAmortizationPeriod"
+        app:layout_constraintTop_toBottomOf="@+id/txtAmortizationPeriod" />
+
+    <RadioButton
+        android:id="@+id/radioButtonMontly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:checked="true"
+        android:text="Monthly"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="@+id/txtPaymentFrequency"
+        app:layout_constraintTop_toBottomOf="@+id/txtPaymentFrequency" />
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="121dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="68dp"
+        android:text="Calculate"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#12422B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtonMontly"
+        app:layout_constraintVertical_bias="0.983" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
